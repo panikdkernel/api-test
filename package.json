@@ -1,0 +1,25 @@
+{
+  "name": "api-test",
+  "version": "1.0.0",
+  "description": "my trying to learn api from coding train",
+  "main": "index.js",
+  "scripts": {
+    "start": "server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.15.3",
+    "nodemon": "^1.11.0"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/panikdkernel/api-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/panikdkernel/api-test/issues"
+  },
+  "homepage": "https://github.com/panikdkernel/api-test#readme"
+}
