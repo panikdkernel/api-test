@@ -3,5 +3,12 @@
     "unicorn": 4,
     "doom": -3,
     "death": -5,
-    "happy": 4
+    "happy": 4,
+    "sad": -2,
+    "gg": 20,
+    "ggwp": 5,
+    "doggo": 12,
+    "earthquake": -50,
+    "tsunami": -80,
+    "icecream": 12
 }
