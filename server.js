@@ -1,12 +1,18 @@
 console.log("server is starting");
 
-//some databse
-var words = {
-    "flowers" : 5,
-    "unicorn" : 4,
-    "doom" : -3,
-    "death" : -5,
-}
+// database now shifted to a separate file words.json
+// var words = {
+//     "flowers" : 5,
+//     "unicorn" : 4,
+//     "doom" : -3,
+//     "death" : -5,
+// }
+
+var fs = require('fs');
+
+var data = fs.readFileSync('words.json');
+var words = JSON.parse(data);
+console.log(words);
 
 var express = require('express');
 
@@ -47,17 +53,23 @@ app.get('/search/:word', function(req,res){
 
 app.get('/add/:word/:score',function(req,res){
     var word = req.params.word;
-    var score = req.params.score;
+    var score = Number(req.params.score);
 
     //adding it to our so called db
     words[word] = score;
-
-    reply = {
-        "msg" : "word and score added to DB"
-    }
-
-    res.send(reply);
-
+    data = JSON.stringify(words, null, 4);
+    fs.writeFile('words.json',data,function(err){
+        if(err)
+            console.log("something went wrong....");
+        else {
+            reply = {
+                "words" : word,
+                "score" : score,
+                "status": "success"
+            }
+            res.send(reply);
+        }    
+    });
 });
 
 
